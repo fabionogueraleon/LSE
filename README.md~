@@ -1,0 +1,28 @@
+# LSE
+#Ejecute en consola los siguientes comandos
+#Se instalará: java8, toolchain, stlink y ejemplos de apliacacion para STM32.
+
+./Practica_1.sh
+
+
+#PARA EL EJEMPLO STM32F100
+cd
+cd stlink/
+sudo ./st-util -1	
+#Después de que ya haya conexion con la placa
+#--- EJECUTAR EN OTRA TERMINAL
+arm-none-eabi-gdb
+tar ext: 4242
+load ~/libopencm3-examples/examples/stm32/f1/stm32vl-discovery/fancyblink/fancyblink.elf
+run
+
+
+#PARAE EL EJEMPLO STM32F4
+cd
+cd stlink/
+sudo ./st-util	
+#Después de que ya haya conexion con la placa
+arm-none-eabi-gdb
+tar extended-remote :4242
+load ~/libopencm3-examples/examples/stm32/f4/stm32f4-discovery/fancyblink/fancyblink.elf
+run
